@@ -1,0 +1,185 @@
+/* sala_colores (juega) */
+
+#canvas-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+}
+
+#myCanvas1 {
+    width: 100%;
+    height: 100%;
+}
+
+.vid-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Contenedor de los botones */
+.button-container {
+    position: absolute;
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    z-index: 2;
+    width: fit-content;
+    left: 50%;
+    margin: 0 auto;
+    transform: translateX(-50%);
+}
+
+
+/* Mobile (default) - pantallas pequeñas */
+@media screen and (max-width: 767px) {
+    .button-container {
+        top: calc(100vh / 3 + 60px); /* Reducido de 120px a 60px */
+        gap: var(--spacing-xs);
+        padding: var(--spacing-sm);
+    }
+}
+
+/* Tablet */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .button-container {
+        top: calc(100vh / 3 + 80px); /* Reducido de 150px a 80px */
+        gap: calc(var(--spacing-xs) * 1.5);
+        padding: calc(var(--spacing-sm) * 1.5);
+    }
+}
+
+/* Desktop */
+@media screen and (min-width: 1024px) {
+    .button-container {
+        top: calc(100vh / 3 + 100px); /* Reducido de 180px a 100px */
+        gap: var(--spacing-sm);
+        padding: var(--spacing-md);
+    }
+}
+
+/* Pantallas muy pequeñas */
+@media screen and (max-width: 360px) {
+    .button-container {
+        top: calc(100vh / 3 + 45px); /* Reducido para pantallas muy pequeñas */
+        gap: calc(var(--spacing-xs) * 0.6);
+        padding: calc(var(--spacing-sm) * 0.8);
+    }
+}
+
+/* Pantallas grandes */
+@media screen and (min-width: 1440px) {
+    .button-container {
+        top: calc(100vh / 3 + 120px); /* Ajustado para pantallas grandes */
+        gap: calc(var(--spacing-sm) * 1.5);
+        padding: calc(var(--spacing-md) * 1.25);
+    }
+}
+
+
+/* Estilos comunes para los botones */
+.button {
+    position: relative;
+    z-index: 3;
+    width: clamp(50px, 10vw, 200px);
+    height: clamp(50px, 10vw, 200px);
+    cursor: pointer;
+    transition: all var(--transition-speed) ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 200px;
+    border-color: var(--color-text);
+}
+
+/* Efecto al pasar el mouse */
+.button:hover {
+    transform: scale(1.05);
+    box-shadow: 5px 5px 8px rgba(var(--shadow), 0.3);
+}
+
+/* Estilos específicos para cada color */
+.color1, .color2, .color3, .color4, .color5 {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-secondary);
+    font-size: calc(var(--font-secondary-size) * 0.8);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    z-index: 6;
+    border: none;
+    color: var(--color-footer);
+    transition: background-color var(--transition-speed) ease, 
+                transform var(--transition-speed) ease;
+    border-radius: 100%;
+    background-color: var(--color-text);
+}
+
+/* Media Queries con variables de espaciado */
+/* Mobile (default) */
+.button-container {
+    gap: var(--spacing-xs);
+    padding: var(--spacing-sm);
+}
+
+/* Tablet (768px y arriba) */
+@media screen and (min-width: 768px) {
+    .color1, .color2, .color3, .color4, .color5 {
+        width: 40px;
+        height: 40px;
+        font-size: var(--font-secondary-size);
+    }
+
+    .button-container {
+        gap: calc(var(--spacing-xs) * 1.5);
+        padding: calc(var(--spacing-sm) * 1.5);
+    }
+}
+
+/* Desktop (1024px y arriba) */
+@media screen and (min-width: 1024px) {
+    .color1, .color2, .color3, .color4, .color5 {
+        width: 50px;
+        height: 50px;
+    }
+
+    .button-container {
+        gap: var(--spacing-sm);
+        padding: var(--spacing-md);
+    }
+}
+
+/* Efectos hover  */
+.color1:hover, .color2:hover, .color3:hover, .color4:hover, .color5:hover {
+    transform: scale(1.1);
+    box-shadow: 5px 5px 8px rgba(var(--shadow), 0.3);
+}
+
+/* Pantallas pequeñas */
+@media screen and (max-width: 360px) {
+    .button-container {
+        gap: calc(var(--spacing-xs) * 0.6);
+        padding: calc(var(--spacing-sm) * 0.8);
+    }
+}
+
+/* Pantallas grandes */
+@media screen and (min-width: 1440px) {
+    .button-container {
+        gap: calc(var(--spacing-sm) * 1.5);
+        padding: calc(var(--spacing-md) * 1.25);
+    }
+}

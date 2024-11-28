@@ -1,0 +1,117 @@
+/* sala_colores (aprende) */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+.editor-layout {
+    margin-top: 18%;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm);
+    height: 200px;
+    width: 90%;
+    box-sizing: border-box;
+}
+
+/* CodeMirror Styles */
+.CodeMirror {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0; /* Corregido el typo 'o' */
+    bottom: 0;
+    height: 100% !important;
+    width: 100% !important;
+    font-size: var(--font-secondary-size);
+    border-radius: 4px;
+    background-color: #272822 !important;
+}
+
+.CodeMirror-gutters {
+    border-right: 1px solid rgba(255, 255, 255, var(--overlay-opacity));
+    background-color: #272822 !important;
+}
+
+.CodeMirror-scroll {
+    overflow: hidden;
+    margin-bottom: 0;
+    margin-right: 0;
+    padding-bottom: 0;
+}
+
+.CodeMirror pre {
+    color: #f8f8f2 !important;
+}
+
+/* Code Panel */
+.code-panel {
+    overflow-y: auto;
+    position: relative;
+    border-radius: 4px;
+    height: 100%;
+    background-color: transparent;
+}
+
+/* Button Container */
+.button-container {
+    display: flex;
+    gap: var(--spacing-sm);
+    justify-content: center;
+    flex-direction: column;
+}
+
+/* Button Styles */
+.button {
+    width: clamp(90px, 15vw, 120px);
+    height: clamp(40px, 10vw, 60px);
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-secondary);
+    cursor: pointer;
+    position: relative;
+    background: none;
+    border: none;
+    outline: none;
+    transition: transform var(--transition-speed) ease-in-out;
+}
+
+.button span {
+    position: relative;
+    color: var(--color-text);
+    text-decoration: none;
+    z-index: 2;
+    display: inline-block;
+    padding: 2px;
+    font-size: clamp(0.6rem, 1vw, 0.7rem);
+    letter-spacing: 0.1em;
+}
+
+.button span::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0.8px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--color-text);
+    transition: width var(--transition-speed) ease-in-out;
+    z-index: 1;
+}
+
+.button:hover {
+    transform: scale(1.1);
+}
+
+.button span:hover::after {
+    width: 100%;
+}
+

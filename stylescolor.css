@@ -1,0 +1,196 @@
+
+
+
+/* sala color */
+
+body, html {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+#canvas-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -2;
+}
+
+.background-container img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    mix-blend-mode: multiply;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 var(--spacing-sm);
+    z-index: 10;
+    box-sizing: border-box;
+}
+
+/* LOGO */
+.logo-container a {
+    display: inline-block;
+    text-align: left;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: 0;
+    font-variation-settings: "wght" var(--font-weight-normal);
+    transition: font-variation-settings var(--transition-speed) ease;
+    z-index: 2;
+}
+
+.logo-container a:hover {
+    font-variation-settings: "wght" var(--font-weight-hover);
+    font-size: clamp(1.2rem, 1.5vw, 1.8rem);
+}
+
+.title {
+    font-size: clamp(1rem, 1.5vw, 1.8rem);
+    margin: 0;
+    line-height: 1;
+    color: var(--color-text);
+    z-index: 2;
+    transition: font-size var(--transition-speed) ease, 
+                font-variation-settings var(--transition-speed) ease;
+}
+
+.page-header {
+    position: absolute;
+    top: calc(100vh / 3);
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 90%;
+    text-align: center;
+    z-index: 2;
+    font-family: var(--font-primary);
+    font-variation-settings: "wght" var(--font-weight-normal);
+    color: var(--color-text);
+    text-shadow: 2px 2px 4px rgba(var(--shadow), 0.3);
+    cursor: pointer;
+    flex-direction: column;
+    align-items: center;
+}
+
+.page-header h1 {
+    font-variation-settings: "wght" var(--font-weight-normal);
+    font-size: clamp(1.5rem, 4vw, 2.2rem);
+    transition: font-size var(--transition-speed) ease,
+                font-variation-settings var(--transition-speed) ease;
+    cursor: pointer;
+}
+
+.page-header h1:hover {
+    font-variation-settings: "wght" var(--font-weight-hover);
+}
+
+.grid-container {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    max-width: 100%;
+    max-height: 80%;
+    margin-top: var(--spacing-lg);
+    transform: translate(-50%, -50%);
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+    z-index: 2;
+}
+
+.juega, .aprende {
+    width: clamp(90px, 15vw, 120px);
+    height: clamp(90px, 15vw, 120px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-secondary);
+    font-size: clamp(0.6rem, 1vw, 1.5rem);
+    cursor: pointer;
+    position: relative;
+    transition: transform var(--transition-speed) ease-in-out;
+}
+
+.juega a, .aprende a {
+    text-decoration: none;
+    color: var(--color-text);
+    position: relative;
+    z-index: 2;
+    display: inline-block;
+    padding: 2px;
+}
+
+.juega a::after, .aprende a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0.8px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--color-text);
+    transition: width var(--transition-speed) ease-in-out;
+    z-index: 1;
+}
+
+.juega:hover, .aprende:hover {
+    transform: scale(1.1);
+}
+
+.juega a:hover::after, .aprende a:hover::after {
+    width: 100%;
+}
+
+.footer-fixed {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--color-footer);
+    padding: 10px max(20px, 5%);
+    font-family: var(--font-terciary);
+    font-size: var(--font-terciary-data);
+    display: flex;
+    justify-content: space-between;
+    color: var(--color-text);
+    backdrop-filter: blur(var(--blur-intensity));
+    box-sizing: border-box;
+    z-index: 3;
+}

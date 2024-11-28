@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sala de Color: Juega</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.12.17/paper-full.min.js"></script>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="stylesprincipal.css">
+    <link rel="stylesheet" href="stylescolor.css">
+    <link rel="stylesheet" href="stylescolorjj.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <a href="index.html" class="title">
+                <span class="m-code">MCODE</span><br>
+                <span class="word-lab">LAB</span>
+            </a>
+        </div>
+      
+        <div class="hamburger-container">
+            <button class="hamburger-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <nav class="menu">
+            <ul class="menu-items">
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#dona">Dona hoy</a></li>
+                <li><a href="index.html#contacto">Contacto</a></li>
+                <li><a href="#contacto">Recursos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="first-section">
+    <div id="canvas-container">
+        <canvas id="myCanvas1" resize></canvas>
+    </div>
+
+    <section class="page-header">
+        <h1>juega</h1>
+        <p id="subtitle" class="hidden">presiona los botones para combinar colores</p>
+    </section>
+
+
+
+    <main class="vid-container">
+    
+        <div class="button-container">
+            <button id="changeColorButton1" class="color1" type="button">
+                <span>1</span>
+            </button>
+            <button id="changeColorButton2" class="color2" type="button">
+                <span>2</span>
+            </button>
+            <button id="changeColorButton3" class="color3" type="button">
+                <span>3</span>
+            </button>
+            <button id="changeColorButton4" class="color4" type="button">
+                <span>4</span>
+            </button>
+            <button id="changeColorButton5" class="color5" type="button">
+                <span>5</span>
+            </button>
+        </div>
+    </main>
+
+
+    
+    <div class="text-nav-container">
+        <a href="colores.html" class="arrow-button">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 12H4M4 12L10 18M4 12L10 6" 
+                      stroke="currentColor" 
+                      stroke-width="1.5" 
+                      stroke-linecap="round" 
+                      stroke-linejoin="round"/>
+            </svg>
+        </a>
+        <a href="#" id="screenshotButton" class="screenshot-nav">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 8H2V4.5A2.5 2.5 0 0 1 4.5 2H8v1H4.5A1.5 1.5 0 0 0 3 4.5zm1.5 14A1.5 1.5 0 0 1 3 20.5V17H2v3.5A2.5 2.5 0 0 0 4.5 23H8v-1zM22 20.5a1.5 1.5 0 0 1-1.5 1.5H17v1h3.5a2.5 2.5 0 0 0 2.5-2.5V17h-1zM20.5 2H17v1h3.5A1.5 1.5 0 0 1 22 4.5V8h1V4.5A2.5 2.5 0 0 0 20.5 2zM14 7h4v4h1V6h-5zm-7 4V7h4V6H6v5zm11 3v4h-4v1h5v-5zm-7 4H7v-4H6v5h5z" 
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      fill="none"/>
+            </svg>
+        </a>
+        <a href="coloresa.html" class="text-nav-button"><span>aprende</span></a>
+    </div>
+</div>
+    
+
+    <footer class="footer-fixed">
+        <span>All rights reserved</span>
+        <span>Fátima Orendain Almada 2024</span>
+    </footer>
+
+    <!-- Scripts al final del body en el orden correcto -->
+    <!-- 1. Paper.js script principal -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.12.17/paper-full.min.js"></script>
+    <script type="text/paperscript" src="./Java/coloresj.js" canvas="myCanvas1"></script>
+    <script type="text/paperscript" src="./Java/coloresj.js" canvas="myCanvas1" data-paper-script="true"></script>
+    <script src="./Java/buttonsSequence.js"></script>
+    <script src="./Java/buttonHandlers.js"></script>
+    
+    <!-- 3. Scripts adicionales -->
+    <script src="./Java/menu.js"></script>
+    <!-- Antes de tus scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="./Java/subtituloss.js"></script>
+
+</body>
+</html>

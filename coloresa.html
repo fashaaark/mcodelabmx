@@ -1,0 +1,138 @@
+<!-- coloresa.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colores</title>
+    <script src="p5.min.js"></script>
+    <script src="sketch.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/monokai.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/javascript/javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/addon/edit/closebrackets.min.js"></script>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="stylesprincipal.css"> 
+    <link rel="stylesheet" href="stylescolor.css">
+    <link rel="stylesheet" href="stylescolorAA.css">
+    
+</head>
+</head>
+<body>
+    <header> 
+        <div class="logo-container">
+            <a href="index.html" class="title">
+                <span class="m-code">MCODE</span><br>
+                <span class="word-lab">LAB</span>
+            </a>
+        </div>
+        <div class="hamburger-container">
+            <button class="hamburger-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <nav class="menu">
+            <ul class="menu-items">
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#dona">Dona hoy</a></li>
+                <li><a href="index.html#contacto">Contacto</a></li>
+                <li><a href="#contacto">Recursos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="canvas-container" style="width: 100%; height: 100%;"></div>
+
+       <!-- Header derecho -->
+   <div class="page-header">
+    <h1>aprende</h1>
+    <p id="subtitle" class="hidden">experimenta modificando el código</p>
+   </div>
+
+    <div class="editor-layout">
+        <!-- Panel izquierdo con el código -->
+        <div class="code-panel">
+            <textarea id="particleEditor">
+    // Modifica los valores para ver los cambios
+    const particleSettings = {
+        color: '#F26D85',      // Color de las partículas
+        opacity: 0.6,          // Opacidad (0-1)
+        size: 8,               // Tamaño
+        speed: 2              // Velocidad
+    };
+            </textarea>
+        </div>
+        <div class="button-container">
+            <button class="button apply-changes">
+                <div class="button-circle"></div>
+                <span>apply</span>
+            </button>
+            <button class="button reset-code">
+                <div class="button-circle"></div>
+                <span>reset</span>
+            </button>
+        </div>
+    </div>
+
+
+    
+    <!-- Menú hamburguesa (fuera de main para que no se vea afectado por el contenedor) -->
+
+    <div class="text-nav-container">
+        <a href="colores.html" class="arrow-button">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 12H4M4 12L10 18M4 12L10 6" 
+                      stroke="currentColor" 
+                      stroke-width="1.5" 
+                      stroke-linecap="round" 
+                      stroke-linejoin="round"/>
+            </svg>
+        </a>
+        <div class="screenshot-container">
+            <a href="#" id="screenshotButton" class="screenshot-nav">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 8H2V4.5A2.5 2.5 0 0 1 4.5 2H8v1H4.5A1.5 1.5 0 0 0 3 4.5zm1.5 14A1.5 1.5 0 0 1 3 20.5V17H2v3.5A2.5 2.5 0 0 0 4.5 23H8v-1zM22 20.5a1.5 1.5 0 0 1-1.5 1.5H17v1h3.5a2.5 2.5 0 0 0 2.5-2.5V17h-1zM20.5 2H17v1h3.5A1.5 1.5 0 0 1 22 4.5V8h1V4.5A2.5 2.5 0 0 0 20.5 2zM14 7h4v4h1V6h-5zm-7 4V7h4V6H6v5zm11 3v4h-4v1h5v-5zm-7 4H7v-4H6v5h5z" 
+                          stroke="currentColor"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          fill="none"/>
+                </svg>
+            </a>
+        </div>
+        <a href="coloresj.html" class="text-nav-button"><span>juega</span></a>
+    </div>
+
+    <div class="background-container">
+        <img src="./images/sound2.gif" alt="Example 4">
+    </div>
+
+    
+
+    <div class="section-divider"></div>
+
+    
+    
+    <footer class="footer-fixed">
+        <span>All rights reserved</span>
+        <span>Fátima Orendain Almada 2024</span>
+    </footer>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/javascript/javascript.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"></script>
+<!-- Tus scripts -->
+<script src="./Java/coloresa.js"></script> 
+<script src="./Java/scolores.js"></script>
+<script src="./Java/buttonHandlers.js"></script> 
+<script src="./Java/menu.js"></script>
+<script src="./Java/subtituloss.js"></script>
+<script src="./Java/animacion.js"></script>
+</body>
+</html>
